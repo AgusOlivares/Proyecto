@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+<!--
+    Esta pagina es especial de la secion nosotros esta dentro de paginas 
+    ya que van a modificarse con una "base.html" que sera utilizada como plantilla general
+    se inicializa con {% extends "nombre_de_mi_base.html" } ya que solamente va a ser info que se 
+    inserta en la plantilla, elimine algunos simbolos ya que me da error la pag
+-->
+
+{% block titulo %} Nosotros {% endblock %}
+    
+{% block contenido %} 
+
+<!-- El siguiente segmento lo cree invocando b s5-jumbotron-default-->
+
+<div class="row align-items-md-stretch">
+    <div class="col-md-6">
+        <div
+            class="h-100 p-5 text-white bg-primary border rounded-3">
+            <h2>Sobre Nosotros</h2>
+            <p>
+                Este es un proyecto realizado entre dos personas, Agustin Olivares e Yvette Frites. 
+                Agustin es estudiante de la carrera de Ciencias de la Computacion de la Universidad Nacional de Cuyo, se ha encargado de la realizacion
+                del backend en la aplicacion. Yvette es estudiante de la Tecnicatura en programacion de la Universidad Tecnologica Nacional, su area de participacion en este proyecto
+                fue el Front-End UI y UX. Este es el primer proyecto colaborativo entre ambos, estamos ingresando en este mundo asi que se aceptan sugerencias y criticas constructivas.
+
+            </p>
+            <a name="" id="" class="btn btn-info" href="https://github.com/AgusOlivares" role="button">Ir a nuestras redes Sociales</a>
+        </div>
+    </div>
+    
+    
+</div>
+   
+{% endblock %}

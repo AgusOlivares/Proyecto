@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+<!--
+    Esta pagina es especial de la secion inicio esta dentro de paginas 
+    ya que van a modificarse con una "base.html" que sera utilizada como plantilla general
+    se inicializa con {% extends "nombre_de_mi_base.html" }
+-->
+
+{% block titulo %} Inicio {% endblock %}
+    
+
+{% block contenido %} 
+
+    <!-- creado con comando b s5-jumbotron-fluid-->
+    
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">Bienvenido a la libreria</h1>
+          <p class="col-md-8 fs-4">
+            Esta es una aplicacion CRUD que utiliza la base de datos SQLite3, creada para ejercitar la creacion de aplicaciones con el framework "Django" perteneciente a Python.
+            Por favor sientase libre de utilizar todas las funcionalidades y de notificar cualquier error que detecte.
+          </p>
+          <a name="" id="" class="btn btn-primary btn-lg" href="{% url 'libros' %}" role="button">Comenzar!</a>
+        </div>
+      </div>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+<!--
+    Esta pagina es especial de la secion nosotros esta dentro de paginas 
+    ya que van a modificarse con una "base.html" que sera utilizada como plantilla general
+    se inicializa con {% extends "nombre_de_mi_base.html" } ya que solamente va a ser info que se 
+    inserta en la plantilla, elimine algunos simbolos ya que me da error la pag
+-->
+
+{% block titulo %} Lista de Libros {% endblock %}
+    
+{% block contenido %} <!--Esta parte se creo con el comando b s5-card-headfoot-->
+
+    <div class="card">
+        <div class="card-header"> <!--Este boton se creo con b s5-button-a-->
+            <a name="" id="" class="btn btn-primary" href="{% url 'crear' %}" role="button">Listar Libros</a>
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Listar Libros</h4>
+            <!-- esta parte se creo con el comando b s5-table-default--->
+            <div class="table-responsive">
+                <table class="table table-primary">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for libro in libros %}
+                        <tr class="">
+                            <td>{{ libro.id }}</td>
+                            <td>{{ libro.titulo }}</td>
+                            <td>
+                                <img src="{{ libro.imagen.url }}" alt="book_cover" height="100"/> <!--hago esto para que cargue bien la imagen-->
+                            </td>
+                            <td>{{ libro.descripcion }}</td>
+                            <td> 
+                                <!-- creados con bs 5-button-a -->
+                                <a name="" id="" class="btn btn-info" href="{% url 'editar' libro.id %}" role="button">Editar</a>
+                                |
+                                <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' libro.id %}" role="button">Borrar</a>
+                                |
+                                <a name="" id="" class="btn btn-primary" href="{% url 'generar_qr' libro.id %}" role="button">Generar QR</a> <!-- INVESTIGAR COMO PUEDO HACER QUE EL QR SE DESCARGUE -->
+
+
+
+
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="card-footer text-muted">
+            <a name="" id="" class="btn btn-danger" href="{% url 'convertir' %}" role="button">Convertir a Excel</a>
+        </div>
+    </div>
+
+{% endblock %}

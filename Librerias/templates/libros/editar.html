@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+<!--
+    Esta pagina es especial de la secion nosotros esta dentro de paginas 
+    ya que van a modificarse con una "base.html" que sera utilizada como plantilla general
+    se inicializa con {% extends "nombre_de_mi_base.html" } ya que solamente va a ser info que se 
+    inserta en la plantilla, elimine algunos simbolos ya que me da error la pag
+-->
+
+{% block titulo %} Editar Libro {% endblock %}
+    
+{% block contenido %} 
+
+
+<!-- creado con b s5-card-head-foot -->
+
+<div class="card">
+    <div class="card-header">
+        Editar un Libro
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Datos del Libro</h4>
+        <!-- formulario para agregar nuevo libro  -->
+        {% include 'libros/form.html' %}
+    </div>
+    <div class="card-footer text-muted">
+        
+    </div>
+</div>
+
+{% endblock %}
